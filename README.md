@@ -24,6 +24,35 @@ It demonstrates asynchronous communication using a message broker.
 
 ---
 
+## 🔥 Advanced RabbitMQ Concepts (New)
+
+As an extension, the project was enhanced to demonstrate multiple RabbitMQ messaging patterns:
+
+### 1. Direct Exchange
+- Routes messages based on exact routing keys  
+- Example: `book.borrow`, `book.return`
+
+### 2. Fanout Exchange
+- Broadcasts messages to all connected consumers  
+- Useful for notifications and logging
+
+### 3. Topic Exchange
+- Uses pattern-based routing with wildcards (`*`, `#`)  
+- Example: `book.*`
+
+### 4. Work Queue (Task Distribution)
+- Multiple consumers share tasks  
+- Demonstrates load balancing
+
+### 5. Message Acknowledgment
+- Ensures messages are processed reliably  
+- Prevents message loss if a consumer fails
+
+### 6. Durable Queues & Persistent Messages
+- Ensures data is not lost even if RabbitMQ restarts  
+
+---
+
 ## ⚙️ Technologies
 
 - Java (JDK 17)
