@@ -1,4 +1,4 @@
-package com.library.messaging.ack;
+package com.library.examples.ack;
 
 import com.library.config.RabbitMQConnection;
 import com.rabbitmq.client.Channel;
@@ -25,3 +25,4 @@ public class AckProducer {
         connection.close();
     }
 }
+

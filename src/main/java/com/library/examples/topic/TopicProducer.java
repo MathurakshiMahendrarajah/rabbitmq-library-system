@@ -1,4 +1,4 @@
-package com.library.messaging.topic;
+package com.library.examples.topic;
 
 import com.library.config.RabbitMQConnection;
 import com.rabbitmq.client.Channel;
@@ -27,3 +27,4 @@ public class TopicProducer {
         connection.close();
     }
 }
+

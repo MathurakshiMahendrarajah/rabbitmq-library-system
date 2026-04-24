@@ -1,4 +1,4 @@
-package com.library.messaging.workqueue;
+package com.library.examples.workqueue;
 
 import com.library.config.RabbitMQConnection;
 import com.rabbitmq.client.Channel;
@@ -27,3 +27,4 @@ public class TaskProducer {
         connection.close();
     }
 }
+

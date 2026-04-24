@@ -1,4 +1,4 @@
-package com.library.messaging.workqueue;
+package com.library.examples.workqueue;
 
 import com.library.config.RabbitMQConnection;
 import com.rabbitmq.client.*;
@@ -37,3 +37,4 @@ public class Worker1 {
         }, tag -> {});
     }
 }
+

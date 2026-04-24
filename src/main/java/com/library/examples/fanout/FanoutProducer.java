@@ -1,4 +1,4 @@
-package com.library.messaging.fanout;
+package com.library.examples.fanout;
 
 import com.library.config.RabbitMQConnection;
 import com.rabbitmq.client.Channel;
@@ -27,3 +27,4 @@ public class FanoutProducer {
         connection.close();
     }
 }
+

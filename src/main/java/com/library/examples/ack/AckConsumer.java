@@ -1,36 +1,36 @@
-package com.library.messaging.workqueue;
+package com.library.examples.ack;
 
 import com.library.config.RabbitMQConnection;
 import com.rabbitmq.client.*;
 
-public class Worker2 {
+public class AckConsumer {
 
-    private static final String QUEUE_NAME = "task_queue";
+    private static final String QUEUE_NAME = "ack_queue";
 
     public static void main(String[] args) throws Exception {
 
         Connection connection = RabbitMQConnection.getConnection();
         Channel channel = connection.createChannel();
 
-        channel.queueDeclare(QUEUE_NAME, true, false, false, null);
+        channel.queueDeclare(QUEUE_NAME, false, false, false, null);
 
-        channel.basicQos(2);
-
-        System.out.println("Worker2 waiting...");
+        System.out.println("Waiting for messages...");
 
         channel.basicConsume(QUEUE_NAME, false, (tag, delivery) -> {
 
             String message = new String(delivery.getBody());
-            System.out.println("Worker2 processing: " + message);
+            System.out.println("Processing: " + message);
 
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+            // simulate failure
+            if (true) {
+                System.out.println("Simulating crash... No ACK sent!");
+                return;
             }
 
+            // ACK (this will NOT execute)
             channel.basicAck(delivery.getEnvelope().getDeliveryTag(), false);
 
         }, tag -> {});
     }
 }
+

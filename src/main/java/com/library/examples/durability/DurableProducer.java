@@ -1,4 +1,4 @@
-package com.library.messaging.durability;
+package com.library.examples.durability;
 
 import com.library.config.RabbitMQConnection;
 import com.rabbitmq.client.*;
@@ -31,3 +31,4 @@ public class DurableProducer {
         connection.close();
     }
 }
+

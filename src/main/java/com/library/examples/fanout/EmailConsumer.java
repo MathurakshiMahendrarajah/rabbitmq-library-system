@@ -1,4 +1,4 @@
-package com.library.messaging.fanout;
+package com.library.examples.fanout;
 
 import com.library.config.RabbitMQConnection;
 import com.rabbitmq.client.*;
@@ -28,3 +28,4 @@ public class EmailConsumer {
         }, tag -> {});
     }
 }
+

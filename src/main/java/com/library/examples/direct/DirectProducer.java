@@ -1,4 +1,4 @@
-package com.library.messaging.direct;
+package com.library.examples.direct;
 
 import com.library.config.RabbitMQConnection;
 import com.rabbitmq.client.Channel;
@@ -36,3 +36,4 @@ public class DirectProducer {
         connection.close();
     }
 }
+
